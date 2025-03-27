@@ -60,16 +60,72 @@
 %----------------------------------------------------------
 
 \section{Introducción}
-Este es un ejemplo de sección con una cita \cite{example_article}. También puede citar libros \cite{example_book} o artículos de conferencias \cite{example_conference}. Para recursos en línea, use \cite{example_website}.
 
-\section{Metodología}
-Este es un ejemplo de metodología.
+    \labstart{B}ienvenido a \textit{lab class} para preparar sus reportes de laboratorio o artículos académicos. A lo largo de esta guía, le mostraremos cómo usar esta plantilla y cómo realizar modificaciones a esta clase.
+    
+    Esta clase incluye los siguientes archivos ubicados en la carpeta 'lab-class': lab.cls, labenvs.sty, labbabel.sty y README.md. Además, main.tex, lab.bib y algunos ejemplos.
 
-\section{Resultados}
-Este es un ejemplo de resultados.
+\section{Título}
 
-\section{Conclusiones}
-Este es un ejemplo de conclusiones.
+    El comando \verb*|\maketitle| genera la sección de título e información del autor, incluyendo el nombre del profesor y las afiliaciones. El título se puede modificar en lab-class/lab.cls/title style section.
+    
+    Por defecto, \textit{lab class} muestra el título a la izquierda. Sin embargo, puede cambiar \verb*|\raggedright| a \verb*|\centering| en \verb*|\titlepos| para mover el título al centro o modificarlo según sus preferencias.
+    
+    Además del comando \verb|\title|, se ha añadido un comando personalizado llamado \verb|\journalname| para incluir más información.
+    
+    Si no necesita este comando, puede indefinirlo y el contenido se ajustará automáticamente.
+
+\section{Resumen}
+
+    El resumen y las palabras clave se definen usando los comandos \verb*|\keywords| y \verb*|\begin{abstract} \end{abstract}| respectivamente. Para que aparezca el resumen, asegúrese de que el comando \verb|\lababstract| esté siempre incluido después del comienzo del documento.
+    
+    Si las palabras clave no se declaran en el preámbulo, el contenido se ajustará automáticamente.
+
+\section{Tablas y figuras}
+
+    \subsection{Tablas}
+    
+    La Tabla \ref{tab:ejemplo} muestra una tabla de ejemplo. El comando \verb|\tabletext{}| se usa para añadir notas a las tablas fácilmente.
+    
+    \begin{table}[H]
+        \centering
+        \caption{Ejemplo de tabla.}
+        \label{tab:ejemplo}
+        \begin{tabular}{ccc}
+            \toprule
+            Columna 1 & Columna 2 & Columna 3 \\
+            \midrule
+            1 & 2 & 3 \\
+            4 & 5 & 6 \\
+            7 & 8 & 9 \\
+            \bottomrule
+        \end{tabular}
+        \tabletext{Esta es una nota de ejemplo para la tabla.}
+    \end{table}
+
+    \subsection{Figuras}
+    
+    La Figura \ref{fig:ejemplo} muestra un ejemplo de figura.
+    
+    \begin{figure}[H]
+        \centering
+        \fbox{\rule{0pt}{3cm}\rule{5cm}{0pt}}
+        \caption{Ejemplo de figura.}
+        \label{fig:ejemplo}
+    \end{figure}
+
+\section{Añadiendo códigos}
+
+    Esta clase\footnote{¡Hola! Soy una nota al pie :)} incluye el paquete \textit{listings}, que ofrece características personalizadas para añadir códigos en documentos \LaTeX, específicamente para C, C++, \LaTeX\ y Matlab.
+    
+    Puede personalizar el formato en lab-class/lab.cls/listings style.
+    
+    \begin{lstlisting}[language=Matlab, caption={Ejemplo de código Matlab.}]
+        % Ejemplo de código Matlab
+        function y = ejemplo(x)
+            y = sin(x) + cos(x);
+        end
+    \end{lstlisting}
 
 %----------------------------------------------------------
 % BIBLIOGRAPHY

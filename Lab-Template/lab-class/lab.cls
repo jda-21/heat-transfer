@@ -39,6 +39,14 @@
 \RequirePackage{physics}
 \RequirePackage{cleveref}
 \RequirePackage{bookmark}
+\RequirePackage{fancyhdr}
+\RequirePackage{lastpage}
+\RequirePackage{lipsum}
+\RequirePackage{enumitem}
+\RequirePackage{rotating}
+\RequirePackage{pdflscape}
+\RequirePackage{longtable}
+\RequirePackage{threeparttable}
 
 %----------------------------------------------------------
 % COLORS
