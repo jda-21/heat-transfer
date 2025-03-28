@@ -1,0 +1,134 @@
+% MANUAL DE USUARIO - EJEMPLOS DE USO
+% Este archivo contiene ejemplos de uso del template
+
+\section*{MANUAL DE USUARIO - Ejemplos de uso}
+\addcontentsline{toc}{section}{MANUAL DE USUARIO - Ejemplos de uso}
+
+A continuación se presentan diversos ejemplos detallados que ilustran las múltiples posibilidades para enriquecer el contenido, incluyendo la incorporación de distintas secciones organizativas, 
+la implementación de ecuaciones matemáticas complejas, la aplicación de variados formatos de texto y estilo, la inclusión de anotaciones y comentarios relevantes, la integración de fragmentos 
+de código funcional, así como otros elementos y aspectos adicionales que pueden resultar sumamente beneficiosos y prácticos para mejorar la experiencia del usuario final.
+
+\section*{Tablas y figuras}
+    % This section demonstrates how to use tables and figures in your document
+
+    \subsection*{Tablas}
+        % Example of a simple table with notes
+        \begin{table}[H]
+            \centering
+            \caption{Astronomical Object Data}
+            \label{tab:table}
+            \begin{tabular}{ll}
+                \toprule
+                \textbf{Object} & \textbf{Distance (Light Years)} \\
+                \midrule
+                Alpha Centauri & 4.37 \\
+                Betelgeuse & 642.5 \\
+                Andromeda Galaxy & 2.537 million \\
+                \bottomrule   
+            \end{tabular}
+            \tabletext{Note: The table contains data of some famous celestial objects.}
+        \end{table}
+
+        The table above (Table \ref{tab:table}) demonstrates the use of \verb|\tabletext{}| for adding notes to tables. 
+
+    \subsection*{Figuras}
+        % Example of a basic figure
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\columnwidth]{Example.pdf}
+            \caption{A simple figure example using PGFPlots \cite{PGFPlots}.}
+            \label{fig:figure}
+        \end{figure}
+
+        The figure above (Fig. \ref{fig:figure}) shows a basic example of including a figure. For more complex layouts, you can use subfigures as shown below.
+
+        % Example of subfigures
+        \begin{figure}[H]
+            \centering
+            \begin{subfigure}[b]{0.45\textwidth}
+                \centering
+                \includegraphics[width=\linewidth]{Example2.pdf}
+                \caption{Left subfigure example}
+                \label{fig:figa}
+            \end{subfigure}
+            \hspace{0.05\textwidth}
+            \begin{subfigure}[b]{0.45\textwidth}
+                \centering
+                \includegraphics[width=\linewidth]{Example3.pdf}
+                \caption{Right subfigure example}
+                \label{fig:figb}
+            \end{subfigure}
+            \caption{Example of multiple figures using the subfigure environment}
+            \label{fig:examplefloat}
+        \end{figure}
+
+        The figure above (Fig. \ref{fig:examplefloat}) demonstrates how to arrange multiple subfigures. You can adjust the spacing between subfigures using \verb|\hspace{...}| and their relative sizes using the width parameter.
+		
+\section*{Paquetes Lab}
+
+    \subsection*{Tauenvs}
+	
+        This template has its own environment package \textit{labenvs.sty} designed to enhance the presentation of the document. Among these custom environments are \textit{labenv}, \textit{info} and \textit{note}.
+		
+        There are two environments which have a predefined title. These can be included by the command \verb|\begin{note}| and \verb|\begin{info}|. All the environments have the same style.
+			
+        An example using the tau environment is shown below.
+		
+    	\begin{labenv}[frametitle=Environment with custom title]
+            This is an example of the custom title environment. To add a title type \verb|[frametitle=Your title]| next to the beginning of the environment (as shown in this example).
+    	\end{labenv}
+		
+        Tauenv is the only environment that you can customize its title. On the other hand, info and note adapt their title to Spanish automatically when this language package is defined.
+		
+    \subsection*{Taubabel}
+
+        In previous versions, we included a package called \textit{lab-babel}, which have all the commands that automatically translate from English to Spanish when this language package is defined. 
+        
+        By default, tau displays its content in English. However, at the beginning of the document you will find a recommendation when writing in Spanish. 
+		
+        \textit{Note:} You may modify this package if you want to use other language than English or Spanish. This will make easier to translate the document without having to modify the class document.
+		
+\section*{Ecuación}
+
+    Equation \ref{ec:equation}, shows the Schrödinger equation as an example. 
+	\begin{equation} \label{ec:equation}
+		\frac{\hbar^2}{2m}\nabla^2\Psi + V(\mathbf{r})\Psi = -i\hbar \frac{\partial\Psi}{\partial t}
+	\end{equation} 
+    The \textit{amssymb} package was not necessary to include, because stix2 font incorporates mathematical symbols for writing quality equations. In case you choose another font, uncomment this package in lab-class/tau.cls/math packages.
+	
+    If you want to change the values that adjust the spacing above and below the equations, play with \verb|\setlength{\eqskip}{8pt}| value until the preferred spacing is set.
+	
+
+\section*{Apéndice}
+
+    \subsection*{Título alternativo}
+
+        You can make the following modification in lab-class/tau.cls/title preferences section to change the position of the title.
+
+\begin{lstlisting}[language=TeX, caption=Alternative title.]
+\newcommand{\titlepos}{\centering}
+\end{lstlisting}
+
+        This will move the title to the center. 
+
+    \subsection*{Entorno de información}
+
+        An example of the info environment declared in the 'labenvs.sty' package is shown below. Remember that \textit{info} and \textit{note} are the only packages that translate their title (English or Spanish).
+		
+	\begin{info}
+		Small example of info environment.
+	\end{info}
+
+    \subsection{Equation skip value}
+
+        With the \verb|\eqskip| command you can change the spacing for equations. The default \textit{eqskip} value is 8pt.
+
+\begin{lstlisting}[language=TeX, caption=Equation skip code.]
+\newlength{\eqskip}\setlength{\eqskip}{8pt}
+	\expandafter\def\expandafter\normalsize\expandafter{%
+		\normalsize%
+		\setlength\abovedisplayskip{\eqskip}%
+		\setlength\belowdisplayskip{\eqskip}%
+		\setlength\abovedisplayshortskip{\eqskip-\baselineskip}%
+		\setlength\belowdisplayshortskip{\eqskip}%
+\end{lstlisting}

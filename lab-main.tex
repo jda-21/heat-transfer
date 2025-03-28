@@ -1,0 +1,316 @@
+% HEAT TRANSFER LAB TEMPLATE
+
+\documentclass[9pt,a4paper,twocolumn,twoside]{lab-class/lab}
+
+%----------------------------------------------------------
+% LANGUAGE CONFIGURATION
+%----------------------------------------------------------
+
+% Uncomment the one you want to use
+% \usepackage[english]{babel}
+\usepackage[spanish,es-nodecimaldot,es-noindentfirst]{babel}
+\usepackage{svg}
+
+%----------------------------------------------------------
+% DOCUMENT CONFIGURATION
+%----------------------------------------------------------
+
+% Editar datos del documento
+% Título, autores, etc.
+
+\input{lab-config}
+
+%----------------------------------------------------------
+% ABSTRACT
+%----------------------------------------------------------
+
+\begin{abstract}    
+    Insertar texto de referencia.
+\end{abstract}
+
+\keywords{Insertar palabras claves}
+
+%----------------------------------------------------------
+
+\begin{document}
+		
+    \maketitle 
+    \thispagestyle{firststyle} 
+    \lababstract 
+    % \tableofcontents
+    % \linenumbers 
+    
+%----------------------------------------------------------
+
+\section{Resumen}
+    % Breve descripción del experimento, objetivos principales y resultados más relevantes
+    % Longitud recomendada: 150-250 palabras
+    % Debe ser autónomo y dar una idea clara del trabajo realizado
+
+    En este experimento se determinó la conductividad térmica de una muestra de aluminio utilizando el método de conducción unidimensional en estado estacionario. Se midió el gradiente de temperatura a lo largo de la muestra y el flujo de calor aplicado. Los resultados mostraron una conductividad térmica de 237 ± 5 W/m·K, que concuerda con los valores reportados en la literatura.
+
+\section{Introducción}
+    % Contextualización del experimento
+    % Importancia y aplicaciones prácticas
+    % Breve descripción de trabajos previos relevantes
+    % Planteamiento del problema a resolver
+
+    La determinación precisa de la conductividad térmica de los materiales es fundamental en diversas aplicaciones de ingeniería, desde el diseño de intercambiadores de calor hasta la optimización de sistemas de aislamiento térmico. Este experimento se centra en la medición de esta propiedad mediante un método experimental directo.
+    
+    Estudios previos han demostrado la importancia de considerar factores como la resistencia térmica de contacto y las pérdidas de calor al ambiente en este tipo de mediciones \cite{PFGPlots}.
+
+\section{Objetivos}
+    % Objetivo general del experimento
+    % Objetivos específicos y mediciones a realizar
+    % Resultados esperados
+
+    \textbf{Objetivo General:}
+    Determinar experimentalmente la conductividad térmica de una muestra de aluminio.
+
+    \textbf{Objetivos Específicos:}
+    \begin{itemize}
+        \item Medir el gradiente de temperatura en estado estacionario
+        \item Calcular el flujo de calor a través de la muestra
+        \item Evaluar la resistencia térmica de contacto
+    \end{itemize}
+
+\section{Marco Teórico}
+    \subsection{Conducción de Calor}
+        % Principios básicos de la conducción de calor
+        % Ecuaciones fundamentales
+        % Variables relevantes
+
+        La conducción de calor es el mecanismo de transferencia de energía térmica entre partículas adyacentes en un medio debido a un gradiente de temperatura. Este proceso es particularmente importante en sólidos, donde las moléculas oscilan alrededor de posiciones fijas.
+
+    \subsection{Ley de Fourier}
+        % Enunciado de la ley
+        % Ecuaciones matemáticas
+        % Aplicación al experimento
+
+        La ley de Fourier establece que el flujo de calor por conducción es proporcional al gradiente de temperatura:
+        \begin{equation}
+            q = -k \frac{dT}{dx}
+        \end{equation}
+        donde $k$ es la conductividad térmica del material.
+
+    \subsection{Resistencia Térmica de Contacto}
+        % Definición y causas
+        % Factores que la afectan
+        % Importancia en el experimento
+
+        La resistencia térmica de contacto surge debido a las imperfecciones microscópicas en las superficies de contacto entre materiales. Esta resistencia puede causar caídas de temperatura significativas en las interfaces.
+
+\section{Metodología Experimental}
+    \subsection{Materiales y Equipos}
+        % Lista detallada de materiales utilizados
+        % Especificaciones técnicas de los equipos
+        % Instrumentos de medición y su precisión
+
+        Los materiales y equipos utilizados en este experimento incluyen:
+        \begin{itemize}
+            \item Muestra de aluminio (10 cm x 2 cm x 2 cm)
+            \item Fuente de calor eléctrica (0-100 W)
+            \item 4 termopares tipo K (precisión: ± 0.1°C)
+            \item Sistema de adquisición de datos
+            \item Pasta térmica conductiva
+        \end{itemize}
+
+    \subsection{Descripción del Montaje}
+        % Diagrama del montaje experimental
+        % Explicación de cada componente
+        % Conexiones y configuración
+
+        El montaje experimental consiste en una muestra de aluminio instrumentada con termopares equidistantes. En un extremo se coloca la fuente de calor eléctrica, mientras que el otro extremo se mantiene a temperatura ambiente. La pasta térmica se aplica en todas las interfaces para minimizar la resistencia de contacto.
+
+    \subsection{Procedimiento Experimental}
+        % Pasos detallados del experimento
+        % Variables medidas y controladas
+        % Precauciones y consideraciones
+
+        El procedimiento seguido fue:
+        \begin{enumerate}
+            \item Aplicar pasta térmica en las interfaces
+            \item Colocar los termopares en las posiciones marcadas
+            \item Configurar la fuente de calor a 50 W
+            \item Esperar hasta alcanzar el estado estacionario ($\approx$ 30 min)
+            \item Registrar las temperaturas cada 10 segundos durante 5 minutos
+        \end{enumerate}
+
+\section{Resultados y Análisis}
+    \subsection{Datos Experimentales}
+        % Tablas de datos recolectados
+        % Condiciones experimentales
+        % Observaciones durante el experimento
+
+        Las mediciones de temperatura en estado estacionario se muestran en la Tabla \ref{tab:temperaturas}. Las condiciones ambientales durante el experimento fueron: temperatura ambiente de 23°C y humedad relativa del 45\%.
+
+        \begin{table}[H]
+            \centering
+            \caption{Temperaturas medidas en estado estacionario}
+            \label{tab:temperaturas}
+            \begin{tabular}{cc}
+                \toprule
+                \textbf{Posición (cm)} & \textbf{Temperatura (°C)} \\
+                \midrule
+                0 & 85.3 ± 0.1 \\
+                2 & 75.2 ± 0.1 \\
+                4 & 65.1 ± 0.1 \\
+                6 & 55.0 ± 0.1 \\
+                \bottomrule
+            \end{tabular}
+        \end{table}
+
+    \subsection{Gráficas y Ajustes}
+        % Gráficas de los datos experimentales
+        % Ajustes lineales o no lineales
+        % Interpretación de las tendencias
+
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.75\columnwidth]{Example.pdf}
+            \caption{Perfil de temperatura a lo largo de la muestra.}
+            \label{fig:gradiente}
+        \end{figure}
+
+        La Fig. \ref{fig:gradiente} muestra el perfil de temperatura a lo largo de la muestra. Se observa una relación lineal que confirma la validez de la ley de Fourier en estado estacionario.
+
+    \subsection{Cálculo de Conductividad Térmica}
+        % Metodología de cálculo
+        % Resultados obtenidos
+        % Comparación con valores teóricos
+
+        La conductividad térmica se calculó usando la ecuación:
+        \begin{equation}
+            k = -\frac{q L}{A \Delta T}
+        \end{equation}
+        donde $q$ es el flujo de calor, $L$ la longitud, $A$ el área transversal y $\Delta T$ la diferencia de temperatura.
+
+    \subsection{Análisis de Errores}
+        % Fuentes de error
+        % Cálculos de incertidumbre
+        % Propagación de errores
+
+        Las principales fuentes de error identificadas fueron:
+        \begin{itemize}
+            \item Incertidumbre en las mediciones de temperatura ($\pm 0.1^{\circ}$C)
+            \item Variaciones en la potencia de la fuente ($\pm 1\%$)
+            \item Pérdidas de calor al ambiente
+        \end{itemize}
+
+    \subsection{Resistencia Térmica de Contacto}
+        % Cálculos realizados
+        % Resultados obtenidos
+        % Análisis de factores influyentes
+
+        La resistencia térmica de contacto se estimó en $5.2 \times 10^{-6}$ m²K/W, lo cual es consistente con valores típicos para interfaces metal-metal con pasta térmica.
+
+\section{Balance de Energía (opcional)}
+    \subsection{Pérdidas por Convección y Radiación}
+        % Estimación de pérdidas
+        % Cálculos realizados
+        % Impacto en los resultados
+
+        Las pérdidas de calor al ambiente se estimaron considerando convección natural y radiación. Para la convección natural:
+        \begin{equation}
+            q_{conv} = h A (T_s - T_{\infty})
+        \end{equation}
+        donde $h \approx 5$ W/m²K es el coeficiente de convección natural promedio.
+
+    \subsection{Cálculo de Temperatura del Fluido}
+        % Metodología de cálculo
+        % Resultados obtenidos
+        % Análisis de implicaciones
+
+        La temperatura del fluido circundante se modeló usando la correlación de Churchill y Chu para convección natural en placas verticales. Los resultados indican una capa límite térmica de aproximadamente 3 mm de espesor.
+
+\section{Conclusiones}
+    % Resumen de resultados principales
+    % Comparación con objetivos planteados
+    % Recomendaciones para futuros experimentos
+
+    Los resultados principales de este experimento son:
+    \begin{itemize}
+        \item Se determinó la conductividad térmica del aluminio: 237 ± 5 W/m·K
+        \item La resistencia térmica de contacto fue minimizada efectivamente usando pasta térmica
+        \item Las pérdidas por convección y radiación representaron menos del 3\% del flujo de calor total
+    \end{itemize}
+
+    Para futuros experimentos se recomienda:
+    \begin{itemize}
+        \item Mejorar el aislamiento térmico para reducir pérdidas
+        \item Aumentar el número de puntos de medición de temperatura
+        \item Realizar mediciones a diferentes potencias de entrada
+    \end{itemize}
+
+\section{Bibliografía}
+    % Referencias utilizadas en el marco teórico
+    % Manuales de equipos consultados
+    % Artículos científicos relevantes
+
+    % CONFIGURACIÓN DE LA BIBLIOGRAFÍA:
+    % 1. Las referencias se agregan al archivo lab.bib
+    % 2. Para citar use \cite{clave_referencia} en el texto
+    % 3. El estilo de citación se configura en lab.cls
+    % 4. Para agregar referencias manualmente use el formato:
+    %    @article{clave,
+    %      author  = {Apellido, Nombre},
+    %      title   = {Título del artículo},
+    %      journal = {Nombre de la revista},
+    %      year    = {año},
+    %      volume  = {volumen},
+    %      pages   = {páginas}
+    %    }
+
+    \printbibliography[heading=bibintoc]
+    
+\clearpage
+% Incluir el manual de usuario
+\input{lab-manual}
+		
+    \subsection{References}
+		
+        In case you require another reference style, you can go to lab-class/tau.cls/biblatex and modify the following.
+		
+\begin{lstlisting}[language=TeX, caption=References style.]
+\RequirePackage[
+	backend=biber,
+	style=ieee,
+	sorting=ynt
+]{biblatex}
+\end{lstlisting}
+
+        By default, \textit{lab class} has its own .bib for this example, if you want to name your own bib file, change the \textit{addbibresource}.
+		
+\begin{lstlisting}[language=TeX]
+\addbibresource{tau.bib}
+\end{lstlisting}
+
+\section{Uso de notas}
+
+    \subsection*{How do I manage my references?}
+        
+        To manage your references, I recommend using the tool \href{https://www.scribbr.es/citar/generador/folders/73QOXYsCwMRu4ifQaN65mx/lists/msTfx7GJjIAOUkufbISnA/}{scribbr}. You can simply enter the URL or create your own citation, and then export it to \LaTeX\ using the options in the three-dot menu.
+            
+        The generated citation can be copied and pasted into \textit{tau.bib}, the file designated for bibliography management. You may rename this file, but if you do, remember to update the \verb|\addbibresource| command in \textit{tau.cls} under the \textit{biblatex} section.
+    
+        \begin{note}
+            Some platforms, such as Google Scholar or scientific journals, provide citations directly in \LaTeX\ format. Therefore, check if there is a ``how to cite this document'' section to streamline the citation process even further.
+        \end{note}
+    
+        Here is an example of a reference code compatible with Bib\TeX.
+
+\begin{verbatim}
+@misc{PFGPlots,
+    author = {PFGPlots},
+    title = {A LaTeX package to create plots.},
+    url = {https://pgfplots.sourceforge.net/}
+}
+\end{verbatim}
+
+
+    
+%----------------------------------------------------------
+
+%----------------------------------------------------------
+
+\end{document}
